@@ -42,9 +42,9 @@ module Haml
     # Designates a block of filtered text.
     FILTER          = ?:
 
-    # Designates a non-parsed line. Not actually a character.
-    PLAIN_TEXT      = -1
-
+    # # Designates a non-parsed line. Not actually a character.
+    # PLAIN_TEXT      = -1
+    # 
     # Keeps track of the ASCII values of the characters that begin a
     # specially-interpreted line.
     SPECIAL_CHARACTERS   = [
@@ -94,7 +94,7 @@ module Haml
       @script_level_stack = []
       @template_index     = 0
       @template_tabs      = 0
-
+                                                  
       match = template.rstrip.scan(/(([ \t]+)?(.*?))(?:\Z|\r\n|\r|\n)/m)
       # discard the last match which is always blank
       match.pop

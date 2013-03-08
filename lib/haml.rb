@@ -20,4 +20,5 @@ end
 
 require 'haml/util'
 require 'haml/engine'
+require 'haml/find_text'
 require 'haml/railtie' if defined?(Rails)

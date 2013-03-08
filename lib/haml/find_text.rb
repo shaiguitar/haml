@@ -1,0 +1,13 @@
+class FindText
+            
+  # [:ELEMENT, :DIV_CLASS, :DIV_ID, :COMMENT, :DOCTYPE, :SCRIPT, :SANITIZE, :FLAT_SCRIPT, :SILENT_SCRIPT, :SILENT_COMMENT, :ESCAPE, :FILTER, :SPECIAL_CHARACTERS, :MULTILINE_CHAR_VALUE, :BLOCK_WITH_SPACES, :MID_BLOCK_KEYWORDS, :START_BLOCK_KEYWORDS, :START_BLOCK_KEYWORD_REGEX, :BLOCK_KEYWORD_REGEX, :DOCTYPE_REGEX, :LITERAL_VALUE_REGEX, :Line, :ParseNode, :StaticConditionalContext]
+  
+  def initialize(haml)
+    @haml = haml
+  end
+  
+  def run 
+    @haml
+    true
+  end
+end
