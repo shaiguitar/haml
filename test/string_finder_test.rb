@@ -6,7 +6,7 @@ module Haml
     test "ignores silent scripts" do
       begin
         result = find_text "- if true\n  - case @foo\n  - when 1\n    bar\n- else\n  bar"
-        assert_equal result, true
+        assert_equal result, []
       rescue SyntaxError
         flunk 'else clause after if containing case should be accepted'
       end
@@ -51,8 +51,9 @@ module Haml
     private
 
     def find_text(haml)
-      find_text = FindText.new(haml)
+      find_text = Parser::FindText.new(haml)
       find_text.run
     end
+
   end
 end
