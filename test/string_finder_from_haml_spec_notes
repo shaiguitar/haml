@@ -1,0 +1,101 @@
+// Just a reference to what haml-spec has listed that could pose as something this needs to cover.
+"tags with inline content" : {
+
+  "Inline content simple tag" : {
+    "haml" : "%p hello",
+    "html" : "<p>hello</p>"
+  },
+
+  "Inline content tag with CSS" : {
+    "haml" : "%p.class1 hello",
+    "html" : "<p class='class1'>hello</p>"
+  },
+
+  "Inline content multiple simple tags" : {
+    "haml" : "%div\n  %div\n    %p text",
+    "html" : "<div>\n  <div>\n    <p>text</p>\n  </div>\n</div>"
+  }
+},
+
+"tags with nested content" : {
+
+  "Nested content simple tag" : {
+    "haml" : "%p\n  hello",
+    "html" : "<p>\n  hello\n</p>"
+  },
+
+  "Nested content tag with CSS" : {
+    "haml" : "%p.class1\n  hello",
+    "html" : "<p class='class1'>\n  hello\n</p>"
+  },
+
+  "Nested content multiple simple tags" : {
+    "haml" : "%div\n  %div\n    %p\n      text",
+    "html" : "<div>\n  <div>\n    <p>\n      text\n    </p>\n  </div>\n</div>"
+  }
+},
+
+"interpolation inside inline content" : {
+  "haml" : "%p #{var}",
+  "html" : "<p>value</p>",
+  "optional" : true,
+  "locals" : {
+    "var" : "value"
+  }
+},
+
+"no interpolation when escaped" : {
+  "haml" : "%p \\#{var}",
+  "html" : "<p>#{var}</p>",
+  "optional" : true,
+  "locals" : {
+    "var" : "value"
+  }
+},
+
+"interpolation when the escape character is escaped" : {
+  "haml" : "%p \\\\#{var}",
+  "html" : "<p>\\value</p>",
+  "optional" : true,
+  "locals" : {
+    "var" : "value"
+  }
+},
+  "following the '~' operator" : {
+    "haml"     : "~ \"Foo\\n<pre>Bar\\nBaz</pre>\"",
+    "html"     : "Foo\n<pre>Bar&#x000A;Baz</pre>",
+    "optional" : true
+  },
+
+  "inside a textarea tag" : {
+    "haml" : "%textarea\n  hello\n  hello",
+    "html" : "<textarea>hello\nhello</textarea>"
+  },
+
+  "inside a pre tag" : {
+    "haml" : "%pre\n  hello\n  hello",
+    "html" : "<pre>hello\nhello</pre>"
+  }
+},
+
+
+"a tag with '>' appended and inline content" : {
+  "haml" : "%li hello\n%li> world\n%li again",
+  "html" : "<li>hello</li><li>world</li><li>again</li>"
+},
+
+"a tag with '>' appended and nested content" : {
+  "haml" : "%li hello\n%li>\n  world\n%li again",
+  "html" : "<li>hello</li><li>\n  world\n</li><li>again</li>"
+},
+
+"a tag with '<' appended" : {
+  "haml" : "%p<\n  hello\n  world",
+  "html" : "<p>hello\nworld</p>"
+}
+
+"Ruby-style one attribute" : {
+  "haml" : "%p{:a => 'b'}= foo",
+  "html" : "<p a='b'>foo</p>",
+  "optional" : true
+},
