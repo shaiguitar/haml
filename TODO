@@ -22,3 +22,11 @@
      Don't quote attributes that don't require it
        http://www.w3.org/TR/REC-html40/intro/sgmltut.html#h-3.2.2
        http://www.w3.org/TR/html5/syntax.html#attributes
+
+Hey, weird pull request, but: I wanted to introduce this to you, in case you had need for it:
+
+https://github.com/shaiguitar/haml-i18n-extractor
+
+It's essentially a library/tool for extracting out i18n text out of haml, by parsing it with the haml nodes/types.
+
+If you can use this, or know anyone who can use this, please let them know and give it a whirl. I would be happy to get feedback. Thanks!
